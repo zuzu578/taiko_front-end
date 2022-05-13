@@ -67,7 +67,7 @@ const SongListBanner = () => {
                 ※収録楽曲は、国や地域によって異なる場合があります。
             </p>
 
-            <SongList genre={getGenre}/>
+            <SongList genre={getGenre} isSelected = {isSelected}/>
 
         </div>
     )
