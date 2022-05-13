@@ -60,3 +60,11 @@ li{
   font-size: 20px;
   font-weight: bold;
 }
+.songListTable{
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+}
+.imgTd{
+  text-align: center;
+}

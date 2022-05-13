@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { commonAxios } from '../apis/commonAxios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Table } from 'react-bootstrap';
+import {splitDifficulty} from '../utils/changeGenreToJapanese/splitDifficultyUtils';
 
 const SongList = (genre:any) =>{  
 
@@ -26,7 +27,7 @@ const SongList = (genre:any) =>{
 
 
 return(
-        <div>
+        <div className='songListTable'>
             {genre.isSelected ? 
              <Table striped bordered hover>
              <thead>
@@ -36,7 +37,7 @@ return(
                          <p className='table_head'>難易度</p>
                          {difficulty.map((item)=>{
                              return(
-                                 <th><img src={`${difficultyImgUrl}${item}${imgExtends}`}/></th>
+                                 <th><td className='imgTd'><img src={`${difficultyImgUrl}${item}${imgExtends}`}/></td></th>
                              )
                          })}
                     </th>
@@ -47,7 +48,11 @@ return(
                      return(
                          <tr>
                              <td><p className='songNamePara'>{item.songName}</p></td>
-                             <td>{item.difficulty}</td>
+                             {splitDifficulty(item.difficulty).map((item)=>{
+                                 return(
+                                     <td>{item}</td>
+                                 )
+                             })}
                          </tr>
                      )
                  })} 
