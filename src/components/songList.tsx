@@ -16,7 +16,7 @@ const SongList = (genre:any) =>{
     useEffect(()=>{
         commonAxios(URL,genre)
         .then((res)=>{
-            console.log('data',res.data);
+           
             setSongList(res.data);
     
         })
@@ -29,7 +29,7 @@ const SongList = (genre:any) =>{
 return(
         <div className='songListTable'>
             {genre.isSelected ? 
-             <Table striped bordered hover>
+             <Table striped bordered hover style={{backgroundColor: genre.tableColor.tableColor}}>
              <thead>
                  <tr>
                      <th><p className='table_head'>曲名</p></th>
@@ -59,10 +59,7 @@ return(
              </tbody>
          </Table>   
             : ''}
-        
-
-
-              
+    
         </div>
     )
 }
