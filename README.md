@@ -24,3 +24,9 @@ https://developers.kakao.com/console/app 에서 application 생성후 카카오 
 <img width="1112" alt="스크린샷 2022-05-15 오후 3 12 58" src="https://user-images.githubusercontent.com/69393030/168459737-2a00dc77-39ca-4f69-b2d8-ce516582c16d.png">
 로그인 
 <img width="1112" alt="스크린샷 2022-05-15 오후 3 13 17" src="https://user-images.githubusercontent.com/69393030/168459746-0eb26ad7-84b1-419e-9698-e6c694774170.png">
+
+# 게시물 rendering
+
+<img width="1118" alt="스크린샷 2022-05-15 오후 9 01 04" src="https://user-images.githubusercontent.com/69393030/168471682-e480928b-5edf-4e98-bf2d-883755630c23.png">
+<img width="1118" alt="스크린샷 2022-05-15 오후 9 01 12" src="https://user-images.githubusercontent.com/69393030/168471690-5a1e33de-7e6f-4c26-8869-87c8a5703223.png">
+
