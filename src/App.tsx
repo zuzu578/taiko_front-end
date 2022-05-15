@@ -10,22 +10,21 @@ import axios from 'axios';
 
 const App = () => {
   
-  const [isLogined , setIsLogined] = useState(false);
+const [userObject ,setUserObject] = useState({});
+  
 
   useEffect(()=>{
     getUserKakaoProfile(function(result:any){
-      console.log('result', result);
+      setUserObject(result.kakao_account.profile);
     })
    
   },[])
 
   return (
     <div className="App">
-      <CommonNavBar isLogined ={isLogined} />
-      
+      <CommonNavBar userObject={userObject}/>
       <Routes>
       <Route path="/"  element={<SongListBanner />}/>
-
       <Route path="/board"  element={<BoardList />}/>
       </Routes>
      

@@ -72,3 +72,11 @@ a{
   text-decoration: none;
   color: black;
 }
+.user_profile img{
+  border-radius: 50px;
+  width:50%;
+}
+
+.login{
+  cursor: pointer;
+}
