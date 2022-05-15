@@ -55,10 +55,9 @@ const BoardWrite = (userObject:any) => {
            <input type="file" onChange={saveFileImage}/>  <button className="w-btn w-btn-blue" type="button">
         게시
     </button>
-
     <BoardListRendering boardData ={boardList}/>
-           
-        </div>
+    
+    </div>
         
     )
     
