@@ -13,13 +13,10 @@ const App = () => {
   const [isLogined , setIsLogined] = useState(false);
 
   useEffect(()=>{
-    getUserKakaoProfile()
-    .then((res)=>{
-      console.log('res',res);
+    getUserKakaoProfile(function(result:any){
+      console.log('result', result);
     })
-    .catch((error)=>{
-      error.meesage;
-  })
+   
   },[])
 
   return (
