@@ -334,3 +334,15 @@ input[type=text]{
   background-size: 400% 400%;
   animation: gradient1 5s ease infinite;
 }
+
+.boardList{
+  margin-top:50px;
+
+}
+.userProfile_001 img{
+  border-radius: 100px;
+  width:10%;
+}
+.userUploadImage img{
+  width:100%;
+}

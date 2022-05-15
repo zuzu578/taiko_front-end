@@ -14,7 +14,7 @@ const CommonNavBar = (userObject:any) =>{
                 <span className="para">遊び方</span>
             </div>
             <div className="nav_items">
-                <span className="para">遊べるお店</span>
+                <span className="para"><a href='/board'>自由掲示板</a></span>
             </div>
             <div className="nav_items">
                 <span className="para"><a href='/'>楽曲リスト</a></span>

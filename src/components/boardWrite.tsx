@@ -25,9 +25,7 @@ const BoardWrite = (userObject:any) => {
   useEffect(()=>{
     getBoardList()
     .then((res:any)=>{
-        console.log(res?.data);
-        setBoardList(res?.data);
-
+        setBoardList(res.data);
     })
     .catch((error)=>{
         error.message;

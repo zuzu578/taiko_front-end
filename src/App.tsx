@@ -27,9 +27,6 @@ const [userObject ,setUserObject] = useState({});
       <Route path="/"  element={<SongListBanner />}/>
       <Route path="/board" element={<BoardList userObject={userObject}/>}/>
       </Routes>
-     
-      
-
     </div>
   )
 }
