@@ -1,16 +1,39 @@
 import { useEffect, useState } from 'react'
 import { SongListBanner } from './components/songListBanner'
 import { CommonNavBar } from './components/commonNavBar'
+import { BoardList } from './components/boardList'
+import { getUserKakaoProfile } from './apis/getUserKakaoProfile'
 import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import axios from 'axios';
 
 
 const App = () => {
-  const [count, setCount] = useState(0);
+  
+  const [isLogined , setIsLogined] = useState(false);
+
+  useEffect(()=>{
+    getUserKakaoProfile()
+    .then((res)=>{
+      console.log('res',res);
+    })
+    .catch((error)=>{
+      error.meesage;
+  })
+  },[])
 
   return (
     <div className="App">
-      <CommonNavBar/>
-      <SongListBanner/>
+      <CommonNavBar isLogined ={isLogined} />
+      
+      <Routes>
+      <Route path="/"  element={<SongListBanner />}/>
+
+      <Route path="/board"  element={<BoardList />}/>
+      </Routes>
+     
+      
+
     </div>
   )
 }
