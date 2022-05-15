@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from 'react';
 import defaultImage from "../assets/스크린샷 2022-05-01 오전 1.25.21.png";
+import { getBoardList } from '../apis/getBoardList';
+import { BoardListRendering } from './boardListRendering';
 
 const BoardWrite = (userObject:any) => {
     //파일 미리볼 url을 저장해줄 state
@@ -15,6 +17,22 @@ const BoardWrite = (userObject:any) => {
     URL.revokeObjectURL(fileImage);
     setFileImage("");
   };
+  
+  const [isUploaded ,setIsUploaded] = useState(false);
+  const [boardList , setBoardList] = useState([{}]);
+
+
+  useEffect(()=>{
+    getBoardList()
+    .then((res:any)=>{
+        console.log(res?.data);
+        setBoardList(res?.data);
+
+    })
+    .catch((error)=>{
+        error.message;
+    })
+  },[isUploaded]);
   
     return(
         <div className="write_form">
@@ -39,9 +57,13 @@ const BoardWrite = (userObject:any) => {
            <input type="file" onChange={saveFileImage}/>  <button className="w-btn w-btn-blue" type="button">
         게시
     </button>
+
+    <BoardListRendering boardData ={boardList}/>
            
         </div>
+        
     )
+    
 
 }
 
