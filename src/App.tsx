@@ -25,7 +25,7 @@ const [userObject ,setUserObject] = useState({});
       <CommonNavBar userObject={userObject}/>
       <Routes>
       <Route path="/"  element={<SongListBanner />}/>
-      <Route path="/board"  element={<BoardList />}/>
+      <Route path="/board" element={<BoardList userObject={userObject}/>}/>
       </Routes>
      
       

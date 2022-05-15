@@ -1,8 +1,10 @@
-const BoardList = () => { 
+import { BoardWrite } from "./boardWrite";
+
+const BoardList = (userObject: any) => { 
 
     return (
         <div>
-            <h1>test</h1>
+            <BoardWrite userObject = {userObject}/>
         </div>
     )
 
