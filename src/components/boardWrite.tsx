@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import defaultImage from "../assets/스크린샷 2022-05-01 오전 1.25.21.png";
 import { getBoardList } from '../apis/getBoardList';
 import { BoardListRendering } from './boardListRendering';
+import test from "../assets/test.mp4";
 
 const BoardWrite = (userObject:any) => {
     //파일 미리볼 url을 저장해줄 state
@@ -40,7 +41,7 @@ const BoardWrite = (userObject:any) => {
                <img src={defaultImage}/>}
                
                 <input type='text'placeholder="무슨일이 일어나고 있나요?"/>
-                
+              
            </div>
            {fileImage && (
                <div className="preview">
@@ -53,9 +54,11 @@ const BoardWrite = (userObject:any) => {
                 )}
           
            <input type="file" onChange={saveFileImage}/>  <button className="w-btn w-btn-blue" type="button">
+             
         게시
     </button>
     <BoardListRendering boardData ={boardList}/>
+    <source src={test} type="video/mp4"/>
     
     </div>
         
