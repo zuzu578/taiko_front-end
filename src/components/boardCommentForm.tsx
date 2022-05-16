@@ -1,11 +1,13 @@
 import { useState } from "react";
 import Modal from 'react-modal';
 
-const BoardCommentForm = () =>{
+const BoardCommentForm = (boardNo:any) =>{
+   
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
     const reply = () => {
         setModalIsOpen(true);
+        console.log('boardNo => ' , boardNo);
     }
     return(
         <div>
@@ -15,7 +17,7 @@ const BoardCommentForm = () =>{
                     <button className="w-btn w-btn-blue" onClick={reply}type="button">게시</button>
             </Modal>
             <div className="reply">
-                <button className="w-btn w-btn-blue" onClick={reply}type="button">댓글</button>
+                <button className="w-btn w-btn-blue" onClick={()=>{reply()}}type="button">댓글</button>
             </div>
 
         </div>

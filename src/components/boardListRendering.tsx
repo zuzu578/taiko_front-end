@@ -19,9 +19,7 @@ const BoardListRendering = (data:any) => {
                         <div className="boardImage">
                             {item.file?.file_name ? <div className="userUploadImage"><img src={item.file?.file_path +item.file?.file_name}/> </div>: ''}
                         </div>
-                        <BoardCommentForm/>
-                        
-                
+                        <BoardCommentForm boardNo ={item.boardNo}/>
                     </div>
                 )
             })
