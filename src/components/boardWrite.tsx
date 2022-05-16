@@ -4,8 +4,27 @@ import { getBoardList } from '../apis/getBoardList';
 import { BoardListRendering } from './boardListRendering';
 import test from "../assets/test.mp4";
 import { writeBoard } from '../apis/writeBoardApi';
+import axios from 'axios';
 
 const BoardWrite = (userObject:any) => {
+
+  const [isUploaded ,setIsUploaded] = useState(0);
+  const [boardList , setBoardList] = useState([{}]);
+  // 초기 페이징 설정값 
+  const [pageNum , setPageNum] = useState(1);
+  
+  const [getContentsValue, setContents] = useState('');
+
+
+  useEffect(()=>{
+    getBoardList(pageNum)
+    .then((res:any)=>{
+        setBoardList(res.data);    
+    })
+    .catch((error)=>{
+        error.message;
+    })
+  },[isUploaded]);
     //파일 미리볼 url을 저장해줄 state
   const [fileImage, setFileImage] = useState("");
 
@@ -23,25 +42,58 @@ const BoardWrite = (userObject:any) => {
     setFileImage("");
   };
   
-  const [isUploaded ,setIsUploaded] = useState(false);
-  const [boardList , setBoardList] = useState([{}]);
-  
-  const [getContentsValue, setContents] = useState('');
 
-
-  useEffect(()=>{
-    getBoardList()
-    .then((res:any)=>{
-        setBoardList(res.data);
-    })
-    .catch((error)=>{
-        error.message;
-    })
-  },[userObject]);
 
   const getContents = (e:any) => {
     setContents(e.target.value);
   }
+  
+
+
+
+const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
+  setContents("")
+  
+  if(!window.Kakao.Auth.getAccessToken()){
+      alert("글 작성은 로그인후 가능해요.");
+      return ;
+  }
+  if(!contentsValue){
+      alert("내용을 입력해주세요.");
+      return;
+  }
+  
+  const frm = new FormData();
+
+  frm.append("userName",userObject.userObject.userObject.nickname);
+  frm.append("userProfile",userObject.userObject.userObject.thumbnail_image_url);
+  frm.append("contents",contentsValue);
+
+  if(file === undefined){
+      frm.append("file","test!!!!@#21#!@#12312312312312");
+  }else{
+      frm.append("file", file[0]);
+  }
+
+  
+  axios.post('http://localhost:8080/postBoard', frm, {
+      headers: {
+          'Content-Type': 'multipart/form-data'
+      }
+  })
+  .then((res: any) => {
+      console.log(res);
+      setIsUploaded(isUploaded+1);
+    
+
+  })
+  .catch((error) => {
+      error.message;
+  })
+}
+
+
+  
   
     return(
         <div className="write_form">
@@ -63,7 +115,7 @@ const BoardWrite = (userObject:any) => {
                   </div>
                 )}
           
-           <input type="file" onChange={saveFileImage}/>  <button onClick={()=>{writeBoard(getContentsValue,file,userObject)}} className="w-btn w-btn-blue" type="button">
+           <input type="file" onChange={saveFileImage}/>  <button onClick={()=>{writeBoard2(getContentsValue,file,userObject)}} className="w-btn w-btn-blue" type="button">
             게시
         </button>
     <BoardListRendering boardData ={boardList}/>
