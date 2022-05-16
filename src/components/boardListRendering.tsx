@@ -1,7 +1,9 @@
 import { BoardListType } from "../types/BoardListType";
-
-
+import { useState } from "react";
+import { BoardCommentForm } from "./boardCommentForm";
 const BoardListRendering = (data:any) => {
+    
+    
    
     return(
         <div>
@@ -16,9 +18,10 @@ const BoardListRendering = (data:any) => {
                         </div>
                         <div className="boardImage">
                             {item.file?.file_name ? <div className="userUploadImage"><img src={item.file?.file_path +item.file?.file_name}/> </div>: ''}
-
                         </div>
+                        <BoardCommentForm/>
                         
+                
                     </div>
                 )
             })
