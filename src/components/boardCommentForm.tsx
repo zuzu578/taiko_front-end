@@ -25,13 +25,10 @@ const BoardCommentForm = (boardNo:any) =>{
         setModalIsOpen(true);
         getBoardComment(boardNo.boardNo)
         .then((res:any)=>{
-           // console.log(res.data);
             setBoardComment(res.data);
         })
         
     }
-
-    console.log('boardComment',boardComment);
     return(
         <div>
              <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>      
