@@ -2,9 +2,7 @@ import { BoardListType } from "../types/BoardListType";
 import { useState } from "react";
 import { BoardCommentForm } from "./boardCommentForm";
 const BoardListRendering = (data:any) => {
-    
-    
-   
+
     return(
         <div>
             {data.boardData.length === 0 ? '게시글이 존재하지 않습니다.' : 
@@ -17,7 +15,7 @@ const BoardListRendering = (data:any) => {
                             {item.contents}
                         </div>
                         <div className="boardImage">
-                            {item.file?.file_name ? <div className="userUploadImage"><img src={item.file?.file_path +item.file?.file_name}/> </div>: ''}
+                            {item.file?.fileName ? <div className="userUploadImage"><img src={item.file?.filePath +item.file?.fileName}/> </div>: ''}
                         </div>
                         <BoardCommentForm boardNo ={item.boardNo}/>
                     </div>
