@@ -6,7 +6,6 @@ import { isMediaFileCheck } from "../utils/changeGenreToJapanese/isMediaFileChec
 
 
 const BoardListRendering = (data:any) => {
-    console.log('data',data.boardData.content);
     return(
         <div>
            

@@ -3,8 +3,8 @@ import { logOut } from "../apis/kakaoAuthLogOut";
 import kakao_login_image from "../assets/kakao_login_small.png";
 import { Button } from "react-bootstrap";
 const CommonNavBar = (userObject:any) =>{
-    
    //<button onClick={KakaoAuth}> login </button>
+
     return(
         <nav className="nav_bar">
             <div className="nav_imgs">
@@ -20,10 +20,10 @@ const CommonNavBar = (userObject:any) =>{
                 <span className="para"><a href='/'>楽曲リスト</a></span>
             </div>
             <div className="nav_items">
-                {window.Kakao.Auth.getAccessToken() ?  <Button variant="danger" onClick={logOut}>logout</Button>:<div className="login" onClick={KakaoAuth}><img src={kakao_login_image}/></div>}
+                {Object.keys(userObject.userObject).length === 0 ||!window.Kakao.Auth.getAccessToken()  ? <div className="login" onClick={KakaoAuth}><img src={kakao_login_image}/></div> : <Button variant="danger" onClick={logOut}>logout</Button>}
             </div>
             <div className="nav_items">
-                {window.Kakao.Auth.getAccessToken() ?
+                {window.Kakao.Auth.getAccessToken() || Object.keys(userObject.userObject).length !== 0?
                  <div className="user_profile">
                      <img src={userObject.userObject.thumbnail_image_url}/>
                      <span className="userName">{userObject.userObject.nickname}</span>

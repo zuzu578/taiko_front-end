@@ -3,8 +3,8 @@ import defaultImage from "../assets/스크린샷 2022-05-01 오전 1.25.21.png";
 import { getBoardList } from '../apis/getBoardList';
 import { BoardListRendering } from './boardListRendering';
 import test from "../assets/test.mp4";
-import { writeBoard } from '../apis/writeBoardApi';
 import axios from 'axios';
+import { Loading } from './loadingSpinner';
 
 const BoardWrite = (userObject:any) => {
 
@@ -12,22 +12,52 @@ const BoardWrite = (userObject:any) => {
   const [boardList , setBoardList] = useState([{}]);
   // 초기 페이징 설정값 
   const [pageNum , setPageNum] = useState(0);
-  
   const [getContentsValue, setContents] = useState('');
-
+  const [isLoading , setIsLoading] = useState(true);
 
   useEffect(()=>{
     getBoardList(pageNum)
     .then((res:any)=>{
-        setBoardList(res.data);    
+        setBoardList(res.data); 
+        setIsLoading(false);   
     })
     .catch((error)=>{
         error.message;
     })
   },[isUploaded]);
+
+  // 다음페이지 
+  const getNextBoard = () =>{
+  
+    console.log('setPage' , pageNum);
+    setPageNum(pageNum + 1);
+    getBoardList(pageNum).
+    then((res:any)=>{
+      setBoardList(res.data)
+      console.log('page! ===>',pageNum)
+      if(res.data.content.length === 0){
+       setPageNum(pageNum);
+        return ;
+      }
+    })
+    .catch((error)=>{error.meessage})
+  }
+
+  // 이전페이지 
+
+  const getPreviousBoard = () =>{
+    
+    if(Math.sign(pageNum) === -1 ||pageNum <0){
+      return;
+    }else{
+      setPageNum(pageNum-1);
+    }
+    getBoardList(pageNum).then((res:any)=>{setBoardList(res.data)}).catch((error)=>{error.meessage})
+  }
+  
+
     //파일 미리볼 url을 저장해줄 state
   const [fileImage, setFileImage] = useState("");
-
   const [file , setFile] = useState();
 
   // 파일 저장
@@ -52,9 +82,10 @@ const BoardWrite = (userObject:any) => {
 
 
 const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
-  setContents("")
-  
-  if(!window.Kakao.Auth.getAccessToken() && Object.keys(userObject.userObject.userObject).length === 0){
+  setContents("");
+  console.log('userObject.userObject.userObject',userObject.userObject.userObject);
+  setPageNum(0);
+  if(!window.Kakao.Auth.getAccessToken() || Object.keys(userObject.userObject.userObject).length === 0){
       alert("글 작성은 로그인후 가능해요.");
       return ;
   }
@@ -70,7 +101,7 @@ const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
   frm.append("contents",contentsValue);
 
   if(file === undefined){
-      frm.append("file","test!!!!@#21#!@#12312312312312");
+      frm.append("file","");
   }else{
       frm.append("file", file[0]);
   }
@@ -91,10 +122,6 @@ const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
       error.message;
   })
 }
-
-
-  
-  
     return(
         <div className="write_form">
            <div className ="userProfile">
@@ -105,6 +132,7 @@ const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
                 <input type='text'placeholder="무슨일이 일어나고 있나요?" onChange={getContents}/>
               
            </div>
+    
            {fileImage && (
                <div className="preview">
                   <img
@@ -118,15 +146,33 @@ const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
            <input type="file" onChange={saveFileImage}/>  <button onClick={()=>{writeBoard2(getContentsValue,file,userObject)}} className="w-btn w-btn-blue" type="button">
             게시
         </button>
-    <BoardListRendering boardData ={boardList}/>
-    <source src={test} type="video/mp4"/>
-    
+
+        {isLoading ? <Loading/> : <>  
+              <BoardListRendering boardData ={boardList}/>
+          <source src={test} type="video/mp4"/>
+          <div className='pageNation'>
+                <nav aria-label="...">
+              <ul className="pagination">
+                <li className="page-item">
+                  <button className="page-link" onClick={getPreviousBoard}>Previous</button>
+                </li>
+                
+                <li className="page-item">
+                  <button className="page-link" onClick={getNextBoard}>Next</button>
+                </li>
+              </ul>
+      </nav>
+    </div></>}
+ 
     </div>
+    
         
     )
     
 
 }
+
+
 
 
 
