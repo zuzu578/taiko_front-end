@@ -5,56 +5,38 @@ import { BoardListRendering } from './boardListRendering';
 import test from "../assets/test.mp4";
 import axios from 'axios';
 import { Loading } from './loadingSpinner';
+import { Button } from 'react-bootstrap';
+
 
 const BoardWrite = (userObject:any) => {
 
   const [isUploaded ,setIsUploaded] = useState(0);
   const [boardList , setBoardList] = useState([{}]);
+
   // 초기 페이징 설정값 
   const [pageNum , setPageNum] = useState(0);
   const [getContentsValue, setContents] = useState('');
   const [isLoading , setIsLoading] = useState(true);
 
+
   useEffect(()=>{
     getBoardList(pageNum)
     .then((res:any)=>{
-        setBoardList(res.data); 
+        setBoardList(res.data.content); 
         setIsLoading(false);   
     })
     .catch((error)=>{
         error.message;
     })
   },[isUploaded]);
-
-  // 다음페이지 
-  const getNextBoard = () =>{
   
-    console.log('setPage' , pageNum);
-    setPageNum(pageNum + 1);
-    getBoardList(pageNum).
-    then((res:any)=>{
-      setBoardList(res.data)
-      console.log('page! ===>',pageNum)
-      if(res.data.content.length === 0){
-       setPageNum(pageNum);
-        return ;
-      }
+  const getMoreList = () =>{
+    setPageNum(pageNum+1);
+    getBoardList(pageNum)
+    .then((res:any)=>{
+     setBoardList([...boardList,...res.data.content]);
     })
-    .catch((error)=>{error.meessage})
   }
-
-  // 이전페이지 
-
-  const getPreviousBoard = () =>{
-    
-    if(Math.sign(pageNum) === -1 ||pageNum <0){
-      return;
-    }else{
-      setPageNum(pageNum-1);
-    }
-    getBoardList(pageNum).then((res:any)=>{setBoardList(res.data)}).catch((error)=>{error.meessage})
-  }
-  
 
     //파일 미리볼 url을 저장해줄 state
   const [fileImage, setFileImage] = useState("");
@@ -83,8 +65,7 @@ const BoardWrite = (userObject:any) => {
 
 const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
   setContents("");
-  console.log('userObject.userObject.userObject',userObject.userObject.userObject);
-  setPageNum(0);
+  //setPageNum(0);
   if(!window.Kakao.Auth.getAccessToken() || Object.keys(userObject.userObject.userObject).length === 0){
       alert("글 작성은 로그인후 가능해요.");
       return ;
@@ -151,17 +132,13 @@ const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
               <BoardListRendering boardData ={boardList}/>
           <source src={test} type="video/mp4"/>
           <div className='pageNation'>
-                <nav aria-label="...">
-              <ul className="pagination">
-                <li className="page-item">
-                  <button className="page-link" onClick={getPreviousBoard}>Previous</button>
-                </li>
-                
-                <li className="page-item">
-                  <button className="page-link" onClick={getNextBoard}>Next</button>
-                </li>
-              </ul>
-      </nav>
+          <div className="d-grid gap-2">
+            <Button variant="primary" size="lg" onClick={getMoreList}>
+              더보기
+            </Button>
+           
+          </div>
+               
     </div></>}
  
     </div>

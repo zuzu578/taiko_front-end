@@ -6,11 +6,12 @@ import { isMediaFileCheck } from "../utils/changeGenreToJapanese/isMediaFileChec
 
 
 const BoardListRendering = (data:any) => {
+    console.log('data=========>',data.boardData);
     return(
         <div>
            
-            {data.boardData?.content?.length === 0 ? '게시글이 존재하지 않습니다.' : 
-            data.boardData?.content?.map((item:BoardListType)=>{
+            {data?.boardData?.length === 0 ? '게시글이 존재하지 않습니다.' : 
+            data?.boardData?.map((item:BoardListType)=>{
                 
                 return(
                     <div className="boardList">
