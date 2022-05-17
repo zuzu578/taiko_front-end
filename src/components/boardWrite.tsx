@@ -11,7 +11,7 @@ const BoardWrite = (userObject:any) => {
   const [isUploaded ,setIsUploaded] = useState(0);
   const [boardList , setBoardList] = useState([{}]);
   // 초기 페이징 설정값 
-  const [pageNum , setPageNum] = useState(1);
+  const [pageNum , setPageNum] = useState(0);
   
   const [getContentsValue, setContents] = useState('');
 
@@ -54,7 +54,7 @@ const BoardWrite = (userObject:any) => {
 const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
   setContents("")
   
-  if(!window.Kakao.Auth.getAccessToken()){
+  if(!window.Kakao.Auth.getAccessToken() && Object.keys(userObject.userObject.userObject).length === 0){
       alert("글 작성은 로그인후 가능해요.");
       return ;
   }
