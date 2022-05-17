@@ -17,6 +17,7 @@ const BoardWrite = (userObject:any) => {
   const [pageNum , setPageNum] = useState(0);
   const [getContentsValue, setContents] = useState('');
   const [isLoading , setIsLoading] = useState(true);
+  const [getPassword,setPassword] = useState('');
 
 
   useEffect(()=>{
@@ -59,10 +60,10 @@ const BoardWrite = (userObject:any) => {
   const getContents = (e:any) => {
     setContents(e.target.value);
   }
-  
 
-
-
+  const passowrd =(e:any) => {
+    setPassword(e.target.value);
+  }
 const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
   setContents("");
   //setPageNum(0);
@@ -74,9 +75,11 @@ const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
       alert("내용을 입력해주세요.");
       return;
   }
+  if(!getPassword){
+    alert('비밀번호를 입력해주세요.');
+  }
   
   const frm = new FormData();
-
   frm.append("userName",userObject.userObject.userObject.nickname);
   frm.append("userProfile",userObject.userObject.userObject.thumbnail_image_url);
   frm.append("contents",contentsValue);
@@ -105,13 +108,15 @@ const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
 }
     return(
         <div className="write_form">
+           
+           <div className='formArea'>
            <div className ="userProfile">
                {userObject.userObject.userObject.thumbnail_image_url ? <img src={userObject.userObject.userObject.thumbnail_image_url}/> : 
-               
                <img src={defaultImage}/>}
                
-                <input type='text'placeholder="무슨일이 일어나고 있나요?" onChange={getContents}/>
-              
+           </div>
+                    <input type='text'placeholder="무슨일이 일어나고 있나요?" onChange={getContents}/>
+                    <input type='text'placeholder="비밀번호" onChange={passowrd}/>
            </div>
     
            {fileImage && (
@@ -127,6 +132,8 @@ const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
            <input type="file" onChange={saveFileImage}/>  <button onClick={()=>{writeBoard2(getContentsValue,file,userObject)}} className="w-btn w-btn-blue" type="button">
             게시
         </button>
+        
+       
 
         {isLoading ? <Loading/> : <>  
               <BoardListRendering boardData ={boardList}/>

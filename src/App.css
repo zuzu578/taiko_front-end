@@ -201,6 +201,7 @@ input[type=text]{
 
 .w-btn-pink {
   background-color: #f199bc;
+  border-radius: 1000px;
   color: #d4dfe6;
 }
 
