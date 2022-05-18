@@ -3,6 +3,9 @@ import Modal from 'react-modal';
 import { getBoardComment } from "../apis/getBoardComment";
 import { BoardCommentType } from "../types/BoardCommentsType";
 import { BoardCommentList } from "./boardCommentList";
+import like from "../assets/free-icon-like-179655.png";
+import dislike from "../assets/free-icon-thumb-down-889220.png";
+
 const BoardCommentForm = (boardNo:any) =>{
     const [boardComment,setBoardComment] = useState([]);
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -66,6 +69,7 @@ const BoardCommentForm = (boardNo:any) =>{
             </Modal>
             <div className="reply">
                 <button className="w-btn w-btn-blue" onClick={()=>{reply()}}type="button">댓글</button>
+                <span className="likeBtn"><img src ={like}/> </span><span className="disLike"><img src={dislike}/></span>
             </div>
 
         </div>

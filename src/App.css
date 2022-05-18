@@ -379,3 +379,15 @@ input[type=password]{
 .formAreae{
   margin-bottom: 5px;
 }
+.likeBtn img{
+  width:4%;
+}
+.likeBtn{
+  cursor: pointer;
+}
+.disLike img{
+  width:4%;
+}
+.disLike {
+  cursor: pointer;
+}

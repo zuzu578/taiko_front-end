@@ -114,8 +114,7 @@ const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
     // 무한스크롤 이벤트
   window.onscroll = function(ev) {
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        getMoreList();
-      
+        getMoreList();     
         console.log("event detected!");
       }
     };
