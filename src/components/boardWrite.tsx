@@ -6,6 +6,7 @@ import test from "../assets/test.mp4";
 import axios from 'axios';
 import { Loading } from './loadingSpinner';
 import { Button } from 'react-bootstrap';
+import { isMediaFileCheck } from '../utils/changeGenreToJapanese/isMediaFileCheck';
 
 
 const BoardWrite = (userObject:any) => {
@@ -136,15 +137,21 @@ const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
     
            {fileImage && (
                <div className="preview">
-                  <img
+                 {isMediaFileCheck(file[0].name) === 'mp4' ?
+                  <video width="500" height="300" controls >
+                      <source src={fileImage} type="video/mp4"/>
+                  </video> : 
+                 <img
                     alt="sample"
                     src={fileImage}
                     style={{ margin: "auto" }}
-                  />
+                  />}
+                  
                   </div>
                 )}
           
-           <input type="file" onChange={saveFileImage}/>  <button onClick={()=>{writeBoard2(getContentsValue,file,userObject)}} className="w-btn w-btn-blue" type="button">
+           <input type="file" onChange={saveFileImage}/> 
+            <button onClick={()=>{writeBoard2(getContentsValue,file,userObject)}} className="w-btn w-btn-blue" type="button">
             게시
         </button>
         
