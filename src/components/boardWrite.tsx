@@ -108,6 +108,16 @@ const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
       error.message;
   })
 }
+
+
+    // 무한스크롤 이벤트
+  window.onscroll = function(ev) {
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        getMoreList();
+      
+        console.log("event detected!");
+      }
+    };
     return(
         <div className="write_form">
            
@@ -145,9 +155,9 @@ const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
           <source src={test} type="video/mp4"/>
           <div className='pageNation'>
           <div className="d-grid gap-2">
-            <Button variant="primary" size="lg" onClick={getMoreList}>
+            {/* <Button variant="primary" size="lg" onClick={getMoreList}>
               더보기
-            </Button>
+            </Button> */}
            
           </div>
                
@@ -157,10 +167,10 @@ const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
     
         
     )
+
     
 
 }
-
 
 
 
