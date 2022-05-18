@@ -1,6 +1,7 @@
 const isMediaFileCheck = (params : string) => {
-    if(params === undefined) {
-        return false;
+    
+    if(params === null || params === undefined) {
+        return ;
     }else{
         const arr :Array<string>= params.split(".");
         const result = arr.find((item)=>{

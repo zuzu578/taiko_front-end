@@ -36,7 +36,7 @@ const BoardListRendering = (data:any) => {
                             : ''}
                             
                         </div>
-                        <BoardCommentForm boardNo ={item?.boardNo}/>
+                        <BoardCommentForm boardNo ={item?.boardNo} data = {data}/>
                     </div>
                 )
             })

@@ -8,6 +8,11 @@ const deleteBoard = (idx : any) => {
           boardNo: idx
         },
       }).then((res)=>{
+
+          if(res.data === 'fail'){
+            alert('삭제에 실패했습니다.');
+            return;
+          }
           window.location.reload();
       })
       .catch((error)=>{

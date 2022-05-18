@@ -391,3 +391,7 @@ input[type=password]{
 .disLike {
   cursor: pointer;
 }
+
+.userProfile_003 img{
+  border-radius: 80px;
+}

@@ -4,6 +4,8 @@ interface BoardCommentType{
     file: any;
     userName : string;
     userProfile : string;
+    filePath : string,
+    fileName : string,
 
 }
 

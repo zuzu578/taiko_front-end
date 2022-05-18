@@ -157,7 +157,7 @@ const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
        
 
         {isLoading ? <Loading/> : <>  
-              <BoardListRendering boardData ={boardList}/>
+              <BoardListRendering boardData ={boardList} userObject={userObject}/>
           <source src={test} type="video/mp4"/>
           <div className='pageNation'>
           <div className="d-grid gap-2">
