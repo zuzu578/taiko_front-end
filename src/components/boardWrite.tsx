@@ -23,7 +23,8 @@ const BoardWrite = (userObject:any) => {
   useEffect(()=>{
     getBoardList(pageNum)
     .then((res:any)=>{
-        setBoardList(res.data.content); 
+      console.log('res.data',res.data);
+        setBoardList(res.data); 
         setIsLoading(false);   
     })
     .catch((error)=>{
@@ -35,7 +36,9 @@ const BoardWrite = (userObject:any) => {
     setPageNum(pageNum+1);
     getBoardList(pageNum)
     .then((res:any)=>{
-     setBoardList([...boardList,...res.data.content]);
+      console.log(res.data);
+      console.log(boardList)
+     setBoardList([...boardList,...res.data]);
     })
   }
 
@@ -54,8 +57,6 @@ const BoardWrite = (userObject:any) => {
     URL.revokeObjectURL(fileImage);
     setFileImage("");
   };
-  
-
 
   const getContents = (e:any) => {
     setContents(e.target.value);
@@ -83,7 +84,8 @@ const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
   frm.append("userName",userObject.userObject.userObject.nickname);
   frm.append("userProfile",userObject.userObject.userObject.thumbnail_image_url);
   frm.append("contents",contentsValue);
-
+  frm.append("password",getPassword);
+  console.log('file',file);
   if(file === undefined){
       frm.append("file","");
   }else{
@@ -116,7 +118,7 @@ const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
                
            </div>
                     <input type='text'placeholder="무슨일이 일어나고 있나요?" onChange={getContents}/>
-                    <input type='text'placeholder="비밀번호" onChange={passowrd}/>
+                    <input type='password'placeholder="비밀번호" onChange={passowrd}/>
            </div>
     
            {fileImage && (

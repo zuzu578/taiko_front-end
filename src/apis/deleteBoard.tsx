@@ -1,13 +1,19 @@
 import axios from "axios";
 
-const deleteBoard = (idx : any ) => {
-    axios.delete('')
-    .then((res)=>{
-        alert('삭제되었습니다.');
-    })
-    .catch((err)=>{
-        alert('삭제에 실패했습니다.');
-    })
+const deleteBoard = (idx : any) => {
+    const deletePassword = prompt('암호를 입력해주세요.');
+      axios.delete(`http://localhost:8080/delete`, {
+        data: { 
+          password: deletePassword,
+          boardNo: idx
+        },
+      }).then((res)=>{
+          window.location.reload();
+      })
+      .catch((error)=>{
+          error.message;
+      })
+  
 
 }
 

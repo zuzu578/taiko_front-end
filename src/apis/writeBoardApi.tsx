@@ -19,7 +19,7 @@ const writeBoard = (contentsValue : string , file:any,userObject:any) =>{
     frm.append("contents",contentsValue);
 
     if(file === undefined){
-        frm.append("file","test!!!!@#21#!@#12312312312312");
+        frm.append("file","");
     }else{
         frm.append("file", file[0]);
     }
