@@ -70,8 +70,13 @@ const BoardCommentForm = (boardNo:any) =>{
                             <img src={item.userProfile}/> {item.userName}{item.createdTime}
 
                          </div>
+                         <div className='contents'>
+                            {item.contents}
+                            </div>
                             <div className="media">
-                                {isMediaFileCheck(item.file.fileName) === 'mp4' ?
+                                {item.file !== null && item.file !== undefined ? 
+                                 <>
+                                    {isMediaFileCheck(item.file.fileName) === 'mp4' ?
                                 <video width="500" height="400" controls >
                                     <source src={`${item.file.filePath}${item.file.fileName}`} type="video/mp4"/>
                                 </video> : 
@@ -80,6 +85,8 @@ const BoardCommentForm = (boardNo:any) =>{
                                     src={`${item.file.filePath}${item.file.fileName}`}
                                     style={{ width:"300px"} }
                                 />}
+                                
+                                </> : ''}
                                 
                                 </div>
                          
@@ -111,8 +118,8 @@ const BoardCommentForm = (boardNo:any) =>{
 
                   
                     </div>
-       
-                    {boardComment?.length !==0 ? boardComment?.map((item:BoardCommentType)=>{
+                    {console.log("boardComment!!!!!!!===>",boardComment)}
+                    {boardComment!==null && boardComment?.length !==0   ? boardComment?.map((item:BoardCommentType)=>{
                         return(
                             <div>
                                 <h1>ㄴ</h1>
@@ -121,7 +128,7 @@ const BoardCommentForm = (boardNo:any) =>{
                                 </div>
                                   <div className="usercontents">
                                       <>  {console.log(isMediaFileCheck(item.fileName))}</>
-
+                                            {console.log(item)}
                                   {item?.fileName && isMediaFileCheck(item?.fileName) !== 'mp4'? 
                                         <div className="userUploadImage">
                                             <img src={item?.filePath +item?.fileName}/> 
