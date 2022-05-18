@@ -116,9 +116,12 @@ const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
                {userObject.userObject.userObject.thumbnail_image_url ? <img src={userObject.userObject.userObject.thumbnail_image_url}/> : 
                <img src={defaultImage}/>}
                
-           </div>
+           </div> 
+                <div className="formAreae">
                     <input type='text'placeholder="무슨일이 일어나고 있나요?" onChange={getContents}/>
+                </div>
                     <input type='password'placeholder="비밀번호" onChange={passowrd}/>
+                
            </div>
     
            {fileImage && (
