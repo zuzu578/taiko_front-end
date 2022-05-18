@@ -30,3 +30,8 @@ https://developers.kakao.com/console/app 에서 application 생성후 카카오 
 <img width="1118" alt="스크린샷 2022-05-15 오후 9 01 04" src="https://user-images.githubusercontent.com/69393030/168471682-e480928b-5edf-4e98-bf2d-883755630c23.png">
 <img width="1118" alt="스크린샷 2022-05-15 오후 9 01 12" src="https://user-images.githubusercontent.com/69393030/168471690-5a1e33de-7e6f-4c26-8869-87c8a5703223.png">
 
+# 2022 년 5/18일 
+<img width="1129" alt="스크린샷 2022-05-18 오후 5 31 02" src="https://user-images.githubusercontent.com/69393030/168994589-8035156a-fb67-4a38-a039-7e200ee1cc13.png">
+게시글 삭제기능 , 좋아요 싫어요 기능  , 무한스크롤로 데이터 가져오도록 변경 
+
+
