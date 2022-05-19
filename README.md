@@ -39,4 +39,11 @@ https://developers.kakao.com/console/app 에서 application 생성후 카카오 
 
 <img width="584" alt="스크린샷 2022-05-18 오후 11 34 55" src="https://user-images.githubusercontent.com/69393030/169067483-04b3a2f9-a200-46ef-b1a7-dfb46d6255d3.png">
 
+# tja file upload 
+
+tja 파일을  자유롭게 업로드할수있도록한다. 
+<img width="1089" alt="스크린샷 2022-05-19 오후 6 43 34" src="https://user-images.githubusercontent.com/69393030/169264266-954ce317-deec-4f07-bd77-072da76287ee.png">
+<img width="1089" alt="스크린샷 2022-05-19 오후 6 43 42" src="https://user-images.githubusercontent.com/69393030/169264281-749e9d7f-9a1d-46cb-a518-4266502c43b2.png">
+
+
 
