@@ -9,7 +9,7 @@ const FileUploadForm = (props : any) =>{
     const [getFiles, setFiles] = useState();
 
     const getFile = (e : any) =>{
-        setFiles(e.target.file);
+        setFiles(e.target.files);
     }
     const getCmmnt = (e:any)=>{
         setComment(e.target.value);

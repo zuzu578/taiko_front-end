@@ -417,3 +417,13 @@ input[type=password]{
   text-align: right;
   font-weight: bold;
 }
+.list{
+  margin-top:20px;
+  margin-bottom:20px;
+
+
+}
+.btomBtn{
+  margin-bottom:50px;
+
+}

@@ -1,8 +1,19 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Table } from 'react-bootstrap';
+import { getTjaFileList } from '../apis/getTjaFileList';
 const FileUploadMain = () =>{
+    const [pageNum , setPageNum] = useState(0);
+    const [fileData,setFileData] = useState([]);
 
     useEffect(()=>{
-
+        getTjaFileList(pageNum)
+        .then((res:any)=>{
+            setFileData(res.data.content);
+            console.log('res.data',res.data.content);
+        })
+        .catch((error)=>{
+            error.message;
+        })
     },[]);
 
     const goFileUpload = () => {
@@ -26,6 +37,42 @@ const FileUploadMain = () =>{
             ※動画のアップロードはご自由に。
             </p>
             <button type="button" onClick={goFileUpload} className="btn btn-light">アップロード</button>
+
+            <div className='list'>
+
+            <Table striped bordered hover>
+             <thead>
+                 <tr>
+                     <th><p className='table_head'>ファイル</p></th>
+                     <th> <p className='table_head'>コメント</p></th>
+                     <th> <p className='table_head'>日時</p></th>
+                 </tr>
+             </thead>
+             <tbody>
+                 {fileData.map((item)=>{
+                     return(
+                         <tr>
+                           <td>
+                               {item.fileName}
+                           </td>
+                           <td>
+                               {item.comments}
+                           </td>
+                           <td>
+                               {item.createdTime}
+                           </td>
+                         </tr>
+                     )
+                 })} 
+             </tbody>
+         </Table> 
+
+            </div>
+            <div className='btomBtn'>
+                <div className="d-grid gap-2">
+                        <button className="btn btn-primary" type="button">もっと見る</button>
+                </div>
+            </div>
         </div>
     )
 }
