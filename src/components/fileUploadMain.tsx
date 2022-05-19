@@ -10,6 +10,7 @@ const FileUploadMain = () =>{
         .then((res:any)=>{
             setFileData(res.data.content);
             console.log('res.data',res.data.content);
+            
         })
         .catch((error)=>{
             error.message;
@@ -57,7 +58,7 @@ const FileUploadMain = () =>{
                                {item.userName}
                            </td>
                            <td>
-                               {item.fileName}
+                               <a href={`http://localhost:8080/fileDownload?fileName=${item.fileName}&filePath=${item.filePath}`}> {item.fileName}</a>
                            </td>
                            <td>
                                {item.comments}
