@@ -21,6 +21,10 @@ const FileUploadMain = () =>{
         window.location.href = '/fileUploadForm';
     }
     return(
+        <>
+        <div className='taiko_image'>
+            <img src="https://taiko-ch.net/images/top/slide/bnr_donfes.jpg"/>
+        </div>
         <div className="mainForm">
             <div className="title">
                 <h1> 太鼓さん次郎　全難易度譜面配布その1 </h1>
@@ -79,7 +83,12 @@ const FileUploadMain = () =>{
                 </div>
             </div>
         </div>
+        <div className='footer'>
+            <img src="https://taiko.namco-ch.net/taiko/images/common/bg_main_sp.png"/>
+        </div>
+        </>
     )
+   
 }
 
 export {FileUploadMain};
