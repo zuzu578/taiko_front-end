@@ -1,5 +1,25 @@
 # 리액트와 타입스크립트 를 이용한 다시만들어보는 태고의달인 커뮤니티
 
+
+# 태고의달인 웹사이트 메인페이지
+<img width="1197" alt="스크린샷 2022-05-19 오후 11 47 32" src="https://user-images.githubusercontent.com/69393030/169324926-d7dc16ae-8c8d-40e8-8789-a81020512b0e.png">
+
+<img width="1197" alt="스크린샷 2022-05-19 오후 11 48 47" src="https://user-images.githubusercontent.com/69393030/169325244-e6c60384-6f08-4700-b4df-ef148241b4f9.png">
+
+
+# 태고의달인 tja 업로드 페이지 
+<img width="1197" alt="스크린샷 2022-05-19 오후 11 49 10" src="https://user-images.githubusercontent.com/69393030/169325363-96c37869-3004-4312-a213-bdd0556d122e.png">
+<img width="1197" alt="스크린샷 2022-05-19 오후 11 49 24" src="https://user-images.githubusercontent.com/69393030/169325441-09ff853a-e516-475b-b4d3-c75d6289f3e2.png">
+
+# 자유게시판 
+
+<img width="1197" alt="스크린샷 2022-05-19 오후 11 49 47" src="https://user-images.githubusercontent.com/69393030/169325540-68bb98b7-e364-4c80-be29-dcefb41889cf.png">
+<img width="1197" alt="스크린샷 2022-05-19 오후 11 50 03" src="https://user-images.githubusercontent.com/69393030/169325582-89c16c8d-bc06-4499-b85b-fd7dcba4645c.png">
+
+# 수록곡 리스트 
+<img width="1197" alt="스크린샷 2022-05-19 오후 11 50 13" src="https://user-images.githubusercontent.com/69393030/169325638-ad73753f-e21b-4149-ba5f-dac834428036.png">
+<img width="1197" alt="스크린샷 2022-05-19 오후 11 50 28" src="https://user-images.githubusercontent.com/69393030/169325675-e6f83fad-3fe7-49c2-b8bc-121a9b79802c.png">
+
 # 2022 년 5/13 일 개발 
 
 태고의달인 공식사이트 https://taiko.namco-ch.net/taiko/songlist/namco.php#sgnavi 에서 악곡 리스트를 크롤링하여 데이터베이스에 적재
