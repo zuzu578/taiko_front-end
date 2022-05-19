@@ -40,6 +40,8 @@ const writeComments = (boardNo:any,getComments:string,password:string,userObject
     .catch((error) => {
         error.message;
     })
+
+    return true;
   }
 
 export { writeComments };

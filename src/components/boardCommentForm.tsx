@@ -28,7 +28,7 @@ const BoardCommentForm = (boardNo:any) =>{
         setFileImage(URL.createObjectURL(e.target.files[0]));
         setFile(e.target.files);
     };
-
+const reload=()=>window.location.reload();
     
   // 파일 삭제
   const deleteFileImage = () => {

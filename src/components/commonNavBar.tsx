@@ -11,7 +11,8 @@ const CommonNavBar = (userObject:any) =>{
                 <img src='https://taiko.namco-ch.net/taiko/images/common/logo_nijiiro.png'/>
             </div>
             <div className="nav_items">
-                <span className="para">遊び方</span>
+                <span className="para"><span className="para"><a href='/fileUpload'>ファイルアップロード
+                </a></span></span>
             </div>
             <div className="nav_items">
                 <span className="para"><a href='/board'>自由掲示板</a></span>

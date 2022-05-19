@@ -395,3 +395,25 @@ input[type=password]{
 .userProfile_003 img{
   border-radius: 80px;
 }
+
+.boardImage img{
+  width:40%;
+}
+.mainForm{
+  width:80%;
+  margin:0 auto;
+}
+
+.fileUploadForm{
+  width:80%;
+  margin:0 auto;
+  margin-top:30px;
+}
+.inputForms{
+  width:50%;
+  margin:0 auto;
+}
+.uploadBtn{
+  text-align: right;
+  font-weight: bold;
+}

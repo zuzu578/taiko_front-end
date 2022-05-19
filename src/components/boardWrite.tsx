@@ -99,10 +99,7 @@ const writeBoard2 = (contentsValue : string , file:any,userObject:any ) =>{
       }
   })
   .then((res: any) => {
-      console.log(res);
       setIsUploaded(isUploaded+1);
-    
-
   })
   .catch((error) => {
       error.message;
