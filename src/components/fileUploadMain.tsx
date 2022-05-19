@@ -43,6 +43,7 @@ const FileUploadMain = () =>{
             <Table striped bordered hover>
              <thead>
                  <tr>
+                     <th><p className='table_head'>アップローダー</p></th>
                      <th><p className='table_head'>ファイル</p></th>
                      <th> <p className='table_head'>コメント</p></th>
                      <th> <p className='table_head'>日時</p></th>
@@ -52,6 +53,9 @@ const FileUploadMain = () =>{
                  {fileData.map((item)=>{
                      return(
                          <tr>
+                           <td>
+                               {item.userName}
+                           </td>
                            <td>
                                {item.fileName}
                            </td>

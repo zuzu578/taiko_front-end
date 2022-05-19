@@ -10,6 +10,10 @@ const uploadFile = (paramMap:FileUploadType) => {
     frm.append("userName",paramMap.userObject.nickname);
     frm.append("createdTime",nowDate.toString());
    
+    if(Object.keys(paramMap.userObject).length ===0 || Object.keys(paramMap.userObject).length === null || Object.keys(paramMap.userObject).length === undefined ){
+        alert("로그인이 필요합니다.");
+        return ;
+    }
     if(paramMap.file === undefined || paramMap.file === null){
         alert('파일이 첨부되지않았습니다.');
         return 
@@ -28,10 +32,16 @@ const uploadFile = (paramMap:FileUploadType) => {
         }
     })
     .then((res: any) => {
+        if(res.data==="success"){
+            alert("정상적으로 업로드되었습니다.");
+            window.location.href = '/fileUpload';
+        }
 
     })
     .catch((error) => {
         error.message;
+        alert("업로드에 실패했습니다.");
+        return;
     })
 }
 
