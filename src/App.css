@@ -427,3 +427,17 @@ input[type=password]{
   margin-bottom:50px;
 
 }
+
+.banner_image img{
+  width:100%;
+}
+.image2{
+  margin-top:50px;
+  text-align: center;
+}
+.footer{
+  text-align: center;
+}
+.image_005 img{
+  width:100%;
+}

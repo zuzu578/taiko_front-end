@@ -107,7 +107,9 @@ const SongListBanner = () => {
             </p>
 
             <SongList genre={getGenre} isSelected = {isSelected} tableColor={tableColor}/>
-
+            <div className='footer'>
+                <img src={`https://taiko.namco-ch.net/taiko/images/common/bg_main_sp.png`}/>
+            </div>
         </div>
     )
 

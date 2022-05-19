@@ -5,6 +5,7 @@ import { BoardList } from './components/boardList'
 import { getUserKakaoProfile } from './apis/getUserKakaoProfile'
 import { FileUploadMain } from './components/fileUploadMain'
 import {FileUploadForm} from './components/fileUploadForm';
+import { Main } from './components/Main'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import axios from 'axios';
@@ -27,6 +28,7 @@ const [userObject ,setUserObject] = useState({});
     <div className="App">
       <CommonNavBar userObject={userObject}/>
       <Routes>
+      <Route path="/main" element={<Main />}/>
       <Route path="/"  element={<SongListBanner />}/>
       <Route path="/board" element={<BoardList userObject={userObject}/>}/>
       <Route path="/fileUpload" element = {<FileUploadMain/>}/>

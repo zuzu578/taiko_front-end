@@ -9,16 +9,24 @@ const writeComments = (boardNo:any,getComments:string,password:string,userObject
     frm.append("userProfile",userObject.thumbnail_image_url);
     frm.append("comments",getComments);
     frm.append("password",password);
-
-    if(!getComments){
+    console.log("userObject",userObject);
+    
+    if(!getComments || getComments === ''){
         alert("댓글을 입력해주세요.");
         return;
     }
     
-    if(!password){
+    if(!password || password === '' ){
         alert("비밀번호를 입력해주세요.");
         return;
     }
+    
+    if(Object.keys(userObject).length === 0 || Object.keys(userObject) === null || Object.keys(userObject) === undefined ){
+        alert("로그인 후에 댓글 작성을 할수있습니다.");
+        return;
+    }
+
+    
 
   
     if(file === undefined){
