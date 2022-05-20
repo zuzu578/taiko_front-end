@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { getTjaFileList } from '../apis/getTjaFileList';
+import { getFileData } from '../apis/getFileData';
 const FileUploadMain = () =>{
     const [pageNum , setPageNum] = useState(0);
     const [fileData,setFileData] = useState([]);
@@ -19,6 +20,19 @@ const FileUploadMain = () =>{
 
     const goFileUpload = () => {
         window.location.href = '/fileUploadForm';
+    }
+
+    const getMoreFileData = () =>{
+        setPageNum(pageNum +1 );
+        getFileData(pageNum)
+        .then((res:any)=>{
+            console.log(res.data.content);
+            setFileData([...fileData,...res.data.content]);
+        })
+        .catch((err)=>{
+            err.message;
+        })
+
     }
     return(
         <>
@@ -79,7 +93,7 @@ const FileUploadMain = () =>{
             </div>
             <div className='btomBtn'>
                 <div className="d-grid gap-2">
-                        <button className="btn btn-primary" type="button">もっと見る</button>
+                        <button className="btn btn-primary" onClick={()=>{getMoreFileData()}} type="button">もっと見る</button>
                 </div>
             </div>
         </div>
