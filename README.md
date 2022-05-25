@@ -65,5 +65,9 @@ tja 파일을  자유롭게 업로드할수있도록한다.
 <img width="1089" alt="스크린샷 2022-05-19 오후 6 43 34" src="https://user-images.githubusercontent.com/69393030/169264266-954ce317-deec-4f07-bd77-072da76287ee.png">
 <img width="1089" alt="스크린샷 2022-05-19 오후 6 43 42" src="https://user-images.githubusercontent.com/69393030/169264281-749e9d7f-9a1d-46cb-a518-4266502c43b2.png">
 
+# 동더 히로바 연동 
+
+<img width="535" alt="스크린샷 2022-05-26 오전 4 59 13" src="https://user-images.githubusercontent.com/69393030/170356863-7014187c-b2cd-4213-bbf8-2c926db76670.png">
+
 
 
