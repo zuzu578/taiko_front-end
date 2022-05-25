@@ -17,7 +17,7 @@ const FileUploadMain = () =>{
             error.message;
         })
     },[]);
-
+    
     const goFileUpload = () => {
         window.location.href = '/fileUploadForm';
     }

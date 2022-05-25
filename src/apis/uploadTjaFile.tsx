@@ -20,7 +20,7 @@ const uploadFile = (paramMap:FileUploadType) => {
     }else{
         frm.append("file", paramMap.file[0]);
     }
-    if(!paramMap.comment){
+    if(paramMap.comment === undefined || paramMap.comment === null){
         alert("설명을 입력해주세요.");
     }
     if(!paramMap.password){
