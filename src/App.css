@@ -462,15 +462,26 @@ input[type=password]{
   width: 300px;
   margin: 0 auto;
 }
-.wrapper{
-  border: 1px solid red;
-  padding:5px;
-  border-radius: 40px;
-  text-align: center;
+.userStyle{
+  position: relative;
+  left:100px;
+  bottom:50px;
   font-weight: bold;
 }
-.userStyle {
-  border-bottom: 1px solid red;
+.dan img {
+  width:20%;
+}
+.userName{
+  position: relative;
+  left:70px;
+  bottom:50px;
+  font-weight: bold;
+}
+.dan {
+  position: relative;
+  left:200px;
+  bottom:75px;
+  font-weight: bold;
 }
 
 .scoreArea img{
@@ -584,6 +595,9 @@ input[type=password]{
   }
 }
 .wrapper{
-  margin-top:30px;
+  margin-top:10px;
 
+}
+.top img{
+  width:100%;
 }

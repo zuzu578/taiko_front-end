@@ -40,11 +40,16 @@ const MyHirobaPage = () =>{
                 return(
                     <>
                     <div className="wrapper">
+                    <div className="top">
+                        <img src='https://donderhiroba.jp/image/sp/640/name_plate_dan_0_1_640.png'/>
+                    </div>
                     <div className="userStyle">
                         <span className="userstyle">{item.userStyle}</span>
                     </div>
-                    <div className="userName">{item.userName} <img src={item?.userDanwi}/><br/></div> 
-                    
+                    <div className="userName">{item.userName}</div> 
+                    <div className="dan">
+                         <img src={item?.userDanwi}/>
+                    </div>
                     
                      </div>
                      <div className="myDong">
