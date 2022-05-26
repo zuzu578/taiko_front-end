@@ -68,6 +68,15 @@ tja 파일을  자유롭게 업로드할수있도록한다.
 # 동더 히로바 연동 
 
 <img width="535" alt="스크린샷 2022-05-26 오전 4 59 13" src="https://user-images.githubusercontent.com/69393030/170356863-7014187c-b2cd-4213-bbf8-2c926db76670.png">
+동더 히로바 사이트에서 로그인 api 를 지원하지 않으니, htmlunit 을 이용하여 dom 을 조작하여 로그인 한뒤 , 데이터를 크롤링하여 db에 저장후 로그인을 한 유저에 해당하는 정보를 보여준다.
+https://donderhiroba.jp/mypage_top.php 
 
 
+# 동더 히로바 연동과정 
+
+<img width="1109" alt="스크린샷 2022-05-26 오후 11 10 36" src="https://user-images.githubusercontent.com/69393030/170504906-c4b6f73c-ace9-4b56-ab67-91c08e270595.png">
+
+<img width="1109" alt="스크린샷 2022-05-26 오후 11 09 34" src="https://user-images.githubusercontent.com/69393030/170504738-01a56eb7-6a61-4439-985e-a7464fdacd2f.png">
+
+<img width="1109" alt="스크린샷 2022-05-26 오후 11 11 11" src="https://user-images.githubusercontent.com/69393030/170505010-2dd6976a-049a-45fb-859a-d2e163cc94e1.png">
 
