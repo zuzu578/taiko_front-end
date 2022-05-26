@@ -444,3 +444,17 @@ input[type=password]{
 .taiko_image img {
   width:100%;
 }
+
+.login_form{
+  padding-top:50px;
+  padding-bottom: 80px;
+  width:50%;
+  margin: 0 auto;
+}
+.info{
+  text-align: center;
+  margin-top:30px;
+}
+.img_051{
+  text-align: center;
+}

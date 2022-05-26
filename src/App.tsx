@@ -6,6 +6,7 @@ import { getUserKakaoProfile } from './apis/getUserKakaoProfile'
 import { FileUploadMain } from './components/fileUploadMain'
 import {FileUploadForm} from './components/fileUploadForm';
 import { Main } from './components/Main'
+import { HirobaMain } from './components/hirobaMain'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 
@@ -34,6 +35,8 @@ const [userObject ,setUserObject] = useState({});
       <Route path="/board" element={<BoardList userObject={userObject}/>}/>
       <Route path="/fileUpload" element = {<FileUploadMain/>}/>
       <Route path="/fileUploadForm" element ={<FileUploadForm  userObject={userObject}/>}/>
+      <Route path="/hiroba" element ={<HirobaMain  userObject={userObject}/>}/>
+    
       </Routes>
     </div>
   )

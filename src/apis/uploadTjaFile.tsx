@@ -22,9 +22,11 @@ const uploadFile = (paramMap:FileUploadType) => {
     }
     if(paramMap.comment === undefined || paramMap.comment === null){
         alert("설명을 입력해주세요.");
+        return 
     }
-    if(!paramMap.password){
+    if(paramMap.password === null || paramMap.password === undefined){
         alert("비밀번호를 입력해주세요.");
+        return
     }
     axios.post('http://localhost:8080/uploadTja', frm, {
         headers: {
