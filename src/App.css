@@ -43,7 +43,7 @@ li{
 }
 .para{
   font-weight: bold;
-  font-size: 20px;
+  font-size: 15px;
   padding-left:20px;
   cursor: pointer;
 
@@ -457,4 +457,133 @@ input[type=password]{
 }
 .img_051{
   text-align: center;
+}
+.donderHirobaMain {
+  width: 300px;
+  margin: 0 auto;
+}
+.wrapper{
+  border: 1px solid red;
+  padding:5px;
+  border-radius: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+.userStyle {
+  border-bottom: 1px solid red;
+}
+
+.scoreArea img{
+  width:100%;
+}
+.lb-wrap {
+  width: 50%;
+  margin: 10px auto;
+  border: 1px solid #000000;
+}
+.lb-wrap img {
+  width: 100%;
+  vertical-align: middle;
+}
+.lb-text {
+  padding: 10px 20px;
+  background-color: #FFEEBC;
+  text-align: center;
+}
+.myDong img{
+  width:100%;
+}
+.coinmedal{
+  position: relative;
+  left:230px;
+  bottom:36px;
+  font-weight: bold;
+}
+.conintitle {
+  position: relative;
+  left:50px;
+  bottom:60px;
+  font-weight: bold;
+}
+.donMedal{
+  position: relative;
+  left:250px;
+  bottom:160px;
+  font-weight: bold;
+}
+.donmedalTitle{
+  position: relative;
+  left:50px;
+  bottom:140px;
+  font-weight: bold;
+}
+.userBestRank2{
+  position: relative;
+  left:250px;
+  bottom:355px;
+  font-weight: bold;
+}
+.userBestRank4{
+  position: relative;
+  left:250px;
+  bottom:335px;
+  font-weight: bold;
+}
+.userBestRank6{
+  position: relative;
+  left:160px;
+  bottom:415px;
+  font-weight: bold;
+}
+.userDonderfulCrown{
+  position: relative;
+  left:250px;
+  bottom:415px;
+  font-weight: bold;
+}
+.userSilverCrown{
+  position: relative;
+  left:60px;
+  bottom:465px;
+  font-weight: bold;
+}
+.userBestRank8{
+  position: relative;
+  left:60px;
+  bottom:430px;
+  font-weight: bold;
+}
+.userGoldCrown{
+  position: relative;
+  left:150px;
+  bottom:440px;
+  font-weight: bold;
+}
+.userBestRank5{
+  position: relative;
+  left:65px;
+  bottom:390px;
+  font-weight: bold;
+}
+.userBestRank3{
+  position: relative;
+  left:160px;
+  bottom:310px;
+  font-weight: bold;
+}
+.userBestRank7{
+  position: relative;
+  left:250px;
+  bottom:440px;
+  font-weight: bold;
+}
+/* Layout(No Edit) */
+@media(max-width:440px) {
+  .lb-wrap {
+  width: 95%;
+  }
+}
+.wrapper{
+  margin-top:30px;
+
 }

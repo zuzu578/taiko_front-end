@@ -9,6 +9,7 @@ import { Main } from './components/Main'
 import { HirobaMain } from './components/hirobaMain'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
+import { MyHirobaPage } from './components/myHirobaPage'
 
 
 
@@ -16,7 +17,6 @@ import { Route, Routes } from 'react-router-dom'
 const App = () => {
   
 const [userObject ,setUserObject] = useState({});
-  
 
   useEffect(()=>{
     getUserKakaoProfile(function(result:any){
@@ -30,6 +30,7 @@ const [userObject ,setUserObject] = useState({});
       
       <CommonNavBar userObject={userObject}/>
       <Routes>
+      <Route path="/myhiroba" element={<MyHirobaPage />}/>
       <Route path="/main" element={<Main />}/>
       <Route path="/"  element={<SongListBanner />}/>
       <Route path="/board" element={<BoardList userObject={userObject}/>}/>

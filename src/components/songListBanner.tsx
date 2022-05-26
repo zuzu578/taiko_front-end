@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { commonAxios } from '../apis/commonAxios';
 import { SongList } from './songList';
 import { TableColorType } from '../types/TableColorType';
+import { getCookie } from '../utils/cookie/cookie';
 
 const SongListBanner = () => {
-
+    console.log("cookie!",getCookie('account'));
     const songGenreList : Array<String> = ["pops","kids","anime","vocalo","game","variety","classic","namco"] ;
     const imgUrl : String = "https://taiko.namco-ch.net/taiko/images/songlist/btn_";
     

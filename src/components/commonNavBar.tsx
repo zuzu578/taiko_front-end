@@ -11,6 +11,10 @@ const CommonNavBar = (userObject:any) =>{
                 <a href="/main"><img src='https://taiko.namco-ch.net/taiko/images/common/logo_nijiiro.png'/></a>
             </div>
             <div className="nav_items">
+                <span className="para"><span className="para"><a href='/myhiroba'>myドンダヒロバ
+                </a></span></span>
+            </div>
+            <div className="nav_items">
                 <span className="para"><span className="para"><a href='/hiroba'>ドンダヒロバ連動
                 </a></span></span>
             </div>
