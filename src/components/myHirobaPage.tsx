@@ -3,12 +3,14 @@ import { getCookie } from "../utils/cookie/cookie";
 import { useEffect, useState } from 'react';
 import { getMyhiroba } from "../apis/getMyhirobaInfomation";
 import { tagReplace } from "../utils/StringUtils/tagReplace";
+import { getMyFavoriteSongList } from "../apis/getMyFavoriteSongList";
+
 const MyHirobaPage = () =>{
-
-
     const [getHirobaData , setHirobaData] = useState([{}]);
-   console.log("cookie!",getCookie('account'));
-   useEffect(()=>{
+    const [getMyFavoriteSong,setMyFavoriteSong] = useState([{}]);
+    console.log("cookie!",getCookie('account'));
+   
+    useEffect(()=>{
     getMyhiroba(getCookie('account'))
     .then((res:any)=>{
        
@@ -27,6 +29,14 @@ const MyHirobaPage = () =>{
             item.userDanwi = userDanwi2.join('').replace(' ','');
         })
         setHirobaData(res?.data);
+
+        getMyFavoriteSongList().then((res:any)=>{
+            console.log(res.data);
+            setMyFavoriteSong(res.data);
+        })
+        .catch((e)=>{
+            e.message;
+        })
     })
     .catch((e)=>{
         e.message;
@@ -108,6 +118,15 @@ const MyHirobaPage = () =>{
                     
                      </>
                  
+                )
+            })}
+            {getMyFavoriteSong.map((item)=>{
+                return(
+                    <div>
+                        <div className="favorite">
+                        {item.userFavoriteSong }
+                        </div>
+                    </div>
                 )
             })}
            
