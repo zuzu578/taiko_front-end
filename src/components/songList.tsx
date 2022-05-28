@@ -28,6 +28,7 @@ const SongList = (genre:any) =>{
 
 return(
         <div className='songListTable'>
+            
             {genre.isSelected ? 
              <Table striped bordered hover style={{backgroundColor: genre.tableColor.tableColor}}>
              <thead>

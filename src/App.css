@@ -469,6 +469,10 @@ input[type=password]{
   font-weight: bold;
 }
 .favorite{
+  border:5px solid #FFCC00;
+  background-color: #FF5B14;
+  padding:20px;
+ 
   position: relative;
   bottom: 300px;
   text-align: center;
@@ -604,5 +608,13 @@ input[type=password]{
 
 }
 .top img{
+  width:100%;
+}
+.title_004{
+  position: relative;
+  bottom: 1910px;
+  text-align: center;
+}
+.image_0005 img{
   width:100%;
 }

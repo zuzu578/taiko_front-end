@@ -10,6 +10,7 @@ import { HirobaMain } from './components/hirobaMain'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import { MyHirobaPage } from './components/myHirobaPage'
+import { MyKisekae } from './components/mykisekae'
 
 
 
@@ -37,7 +38,7 @@ const [userObject ,setUserObject] = useState({});
       <Route path="/fileUpload" element = {<FileUploadMain/>}/>
       <Route path="/fileUploadForm" element ={<FileUploadForm  userObject={userObject}/>}/>
       <Route path="/hiroba" element ={<HirobaMain  userObject={userObject}/>}/>
-    
+      <Route path="/mykisekae" element ={<MyKisekae/>}/>
       </Routes>
     </div>
   )

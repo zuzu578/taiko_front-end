@@ -45,7 +45,9 @@ const MyHirobaPage = () =>{
    console.log(getHirobaData);
     return(
         <div className="donderHirobaMain">
-           
+           <div className="d-grid gap-2">
+                <button className="btn btn-primary" type="button"><a href={`/mykisekae?user_no=${getHirobaData[0].userNo}`}>Myきせかえ</a></button>
+           </div>
             {getHirobaData.map((item:any)=>{
                 return(
                     <>
@@ -120,15 +122,22 @@ const MyHirobaPage = () =>{
                  
                 )
             })}
+
+            
             {getMyFavoriteSong.map((item)=>{
                 return(
-                    <div>
+                    <div> 
                         <div className="favorite">
                         {item.userFavoriteSong }
                         </div>
                     </div>
                 )
             })}
+
+                <h3 className="title_004">お気に入り曲</h3>
+      
+
+
            
         </div>
     )
