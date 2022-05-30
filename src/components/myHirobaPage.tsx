@@ -8,8 +8,12 @@ import { getMyFavoriteSongList } from "../apis/getMyFavoriteSongList";
 const MyHirobaPage = () =>{
     const [getHirobaData , setHirobaData] = useState([{}]);
     const [getMyFavoriteSong,setMyFavoriteSong] = useState([{}]);
-    console.log("cookie!",getCookie('account'));
-   
+    const [dataListType ,setDataListType] = useState('');
+    
+    const setDataTypeFnc = (type:string) => {
+        setDataListType(type);
+    }
+  
     useEffect(()=>{
     getMyhiroba(getCookie('account'))
     .then((res:any)=>{
@@ -45,9 +49,7 @@ const MyHirobaPage = () =>{
    console.log(getHirobaData);
     return(
         <div className="donderHirobaMain">
-           <div className="d-grid gap-2">
-                <button className="btn btn-primary" type="button"><a href={`/mykisekae?user_no=${getHirobaData[0].userNo}`}>Myきせかえ</a></button>
-           </div>
+            
             {getHirobaData.map((item:any)=>{
                 return(
                     <>
@@ -123,7 +125,9 @@ const MyHirobaPage = () =>{
                 )
             })}
 
+            {dataListType === 'likeSong' ? 
             
+            <>
             {getMyFavoriteSong.map((item)=>{
                 return(
                     <div> 
@@ -133,11 +137,25 @@ const MyHirobaPage = () =>{
                     </div>
                 )
             })}
+            </>
+            : ''}
+            
 
-                <h3 className="title_004">お気に入り曲</h3>
-      
-
-
+        <h3 className="title_004">お気に入り曲</h3>
+        <div className="btn_008">
+                <div className="btn">
+                    <button className="btn btn-primary" onClick={()=>{setDataTypeFnc('likeSong')}} type="button">お気に入り曲</button>
+                </div>
+                <div className="btn">
+                    <button className="btn btn-primary" onClick={()=>{setDataTypeFnc('song')}} type="button">get楽曲</button>
+                </div>
+                <div className="btn">
+                    <button className="btn btn-primary" onClick={()=>{setDataTypeFnc('sound')}} type="button">get音色</button>
+                </div>
+                <div className="btn">
+                    <button className="btn btn-primary" onClick={()=>{setDataTypeFnc('costume')}} type="button">Myきせかえ</button>
+                </div>
+            </div>
            
         </div>
     )

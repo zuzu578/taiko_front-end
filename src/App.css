@@ -618,3 +618,9 @@ input[type=password]{
 .image_0005 img{
   width:100%;
 }
+.btn_008{
+  position: absolute;
+  bottom: 500px;
+  text-align: center;
+
+}
