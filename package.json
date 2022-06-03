@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "19.0.0",
+    "@ckeditor/ckeditor5-react": "2.1.0",
     "axios": "^0.27.2",
     "bootstrap": "^5.1.3",
     "react": "^18.0.0",
@@ -20,6 +22,7 @@
     "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
+    "@types/ckeditor__ckeditor5-core": "^33.0.3",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@types/react-modal": "^3.13.1",

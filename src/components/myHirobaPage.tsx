@@ -49,7 +49,7 @@ const MyHirobaPage = () =>{
    console.log(getHirobaData);
     return(
         <div className="donderHirobaMain">
-            
+            <img src='https://donderhiroba.jp/imgsrc_kisekae.php?cos=13&type=5'/>
             {getHirobaData.map((item:any)=>{
                 return(
                     <>
@@ -152,9 +152,7 @@ const MyHirobaPage = () =>{
                 <div className="btn">
                     <button className="btn btn-primary" onClick={()=>{setDataTypeFnc('sound')}} type="button">get音色</button>
                 </div>
-                <div className="btn">
-                    <button className="btn btn-primary" onClick={()=>{setDataTypeFnc('costume')}} type="button">Myきせかえ</button>
-                </div>
+                
             </div>
            
         </div>

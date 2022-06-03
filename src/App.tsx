@@ -11,7 +11,8 @@ import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import { MyHirobaPage } from './components/myHirobaPage'
 import { MyKisekae } from './components/mykisekae'
-
+import { TaikoWikiMain } from './components/taikoWiki'
+import { WikiReg } from './components/wikiReg'
 
 
 
@@ -39,6 +40,8 @@ const [userObject ,setUserObject] = useState({});
       <Route path="/fileUploadForm" element ={<FileUploadForm  userObject={userObject}/>}/>
       <Route path="/hiroba" element ={<HirobaMain  userObject={userObject}/>}/>
       <Route path="/mykisekae" element ={<MyKisekae/>}/>
+      <Route path="/wiki" element ={<TaikoWikiMain/>}/>
+      <Route path="/wikiReg" element={<WikiReg/>}/>
       </Routes>
     </div>
   )
