@@ -7,6 +7,7 @@ const WikiReg = () => {
 
     },[]);
     return (
+        <div>
             <CKEditor
                 editor={ClassicEditor}
                 data="<p>Hello from CKEditor 5!</p>"
@@ -25,6 +26,7 @@ const WikiReg = () => {
                     console.log('Focus.', editor);
                 }}
             />
+            </div>
         );
 }
 
