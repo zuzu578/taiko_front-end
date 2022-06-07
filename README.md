@@ -1,5 +1,9 @@
 # 리액트와 타입스크립트 를 이용한 다시만들어보는 태고의달인 커뮤니티
+# zuzu578 은 디시인사이드 태고의달인 갤러리의 무궁한 발전을 기원합니다. 개념글 감사합니다.
 
+https://gall.dcinside.com/mgallery/board/view/?id=taiko&no=162694&exception_mode=recommend&page=1
+
+네
 
 # 태고의달인 웹사이트 메인페이지
 <img width="1197" alt="스크린샷 2022-05-19 오후 11 47 32" src="https://user-images.githubusercontent.com/69393030/169324926-d7dc16ae-8c8d-40e8-8789-a81020512b0e.png">
